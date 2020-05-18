@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Albums</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Num canciones</th>
+      <th>Discografica</th>
+      <th>Album type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @albums.each do |album| %>
+      <tr>
+        <td><%= album.nombre %></td>
+        <td><%= album.descripcion %></td>
+        <td><%= album.num_canciones %></td>
+        <td><%= album.discografica %></td>
+        <td><%= album.album_type_id %></td>
+        <td><%= link_to 'Show', album %></td>
+        <td><%= link_to 'Edit', edit_album_path(album) %></td>
+        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album', new_album_path, :class => "btn btn-primary" %>
+<%= link_to 'New song',  {controller: "songs", action: "index"}, :class => "btn btn-primary"%>
+<%= link_to 'Atrás', {controller: "artists", action: "index"}, :class => "btn btn-primary"%>
+

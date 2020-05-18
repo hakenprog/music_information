@@ -1,0 +1,43 @@
+<%= form_with(model: artist_album, local: true) do |form| %>
+  <% if artist_album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist_album.errors.count, "error") %> prohibited this artist_album from being saved:</h2>
+
+      <ul>
+        <% artist_album.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+ <h1>Albumes de <%=@artist.nombre %></h1>
+
+<table id ="genres" class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Artista</th>
+      <th>Album</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <%= render partial: "artist_album", collection: @artist.artist_albums%>
+
+  </tbody>
+</table>
+<br>
+<h2>Añadir álbum al artista</h2>
+<div class="fields">
+	<%=form.label "Género"%>
+	<%= form.collection_select(:album_id, Album.all, :id, :nombre) %>
+</div>
+ 	<%= form.hidden_field :artist_id, :value => params[:artist_id]%>
+<div class="actions" id="submit">
+    <%= form.submit 'Añadir álbum' %>
+</div>
+<%end%>
+

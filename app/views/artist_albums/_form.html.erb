@@ -1,0 +1,28 @@
+<%= form_with(model: artist_album, local: true) do |form| %>
+  <% if artist_album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist_album.errors.count, "error") %> prohibited this artist_album from being saved:</h2>
+
+      <ul>
+        <% artist_album.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%=form.label "Artista"%>
+    <%= form.collection_select(:artist_id, Artist.all, :id, :nombre) %>
+  </div>
+
+  <div class="field">
+    <%=form.label "Álbum"%>
+    <%= form.collection_select(:album_id, Album.all, :id, :nombre) %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

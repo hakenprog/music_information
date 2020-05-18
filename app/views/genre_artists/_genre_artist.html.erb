@@ -1,0 +1,7 @@
+<tr>
+        <td><%= genre_artist.artist.nombre %></td>
+        <td><%= genre_artist.genre.nombre %></td>
+        <td><%= link_to 'Show', genre_artist %></td>
+        <td><%= link_to 'Edit', edit_genre_artist_path(genre_artist) %></td>
+        <td><%= link_to 'Destroy', genre_artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

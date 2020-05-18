@@ -1,0 +1,7 @@
+<tr>
+        <td><%= artist_album.artist.nombre %></td>
+        <td><%= artist_album.album.nombre %></td>
+        <td><%= link_to 'Show', artist_album %></td>
+        <td><%= link_to 'Edit', edit_artist_album_path(artist_album) %></td>
+        <td><%= link_to 'Destroy', artist_album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

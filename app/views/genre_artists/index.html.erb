@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Genre Artists</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genre_artists.each do |genre_artist| %>
+      <tr>
+        <td><%= genre_artist.artist_id %></td>
+        <td><%= genre_artist.genre_id %></td>
+        <td><%= link_to 'Show', genre_artist %></td>
+        <td><%= link_to 'Edit', edit_genre_artist_path(genre_artist) %></td>
+        <td><%= link_to 'Destroy', genre_artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genre Artist', new_genre_artist_path, :class => "btn btn-primary"  %>

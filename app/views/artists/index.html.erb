@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Artists</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Informacion</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr>
+        <td><%= artist.nombre %></td>
+        <td><%= artist.descripcion %></td>
+        <td><%= artist.informacion %></td>
+         <td><%= artist.state.nombre %></td>
+        <td><%= link_to 'Ver', artist %></td>
+        <td><%= link_to 'Editar', edit_artist_path(artist) %></td>
+        <td><%= link_to 'Eliminar', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Añadir géneros', {controller: "genre_artists", action: "add_genres", artist_id: artist.id}%></td>
+        <td><%= link_to 'Añadir álbumes', {controller: "artist_albums", action: "add_albums", artist_id: artist.id}%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Añadir Artist', new_artist_path, :class => "btn btn-primary" %>
+<%= link_to 'Añadir Album', {controller: "albums", action: "index"}, :class => "btn btn-primary" %>
+<%= link_to 'Añadir Genero', {controller: "genres", action: "index" }, :class => "btn btn-primary" %>
+<%= link_to 'Añadir Estado', {controller: "states", action: "index" }, :class => "btn btn-primary" %>
+<%= link_to 'Añadir tipo de album', {controller: "album_types", action: "index"}, :class => "btn btn-primary" %>
+<%= link_to 'Ver Álbumes', {controller: "albums", action: "index"}, :class => "btn btn-primary" %>
+
+
+
+
+
+

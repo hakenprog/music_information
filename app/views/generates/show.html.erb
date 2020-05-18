@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @generate.song %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @generate.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @generate.descripcion %>
+</p>
+
+<p>
+  <strong>Duracion sec:</strong>
+  <%= @generate.duracion_sec %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @generate.album_id %>
+</p>
+
+<%= link_to 'Edit', edit_generate_path(@generate) %> |
+<%= link_to 'Back', generates_path %>

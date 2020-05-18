@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: 
+  descripcion: MyText
+  fecha_ini: 2020-05-08
+  fecha_fin: 2020-05-08
+  informacion: MyText
+  genre_artist: one
+  location: one
+  state: one
+
+two:
+  nombre: 
+  descripcion: MyText
+  fecha_ini: 2020-05-08
+  fecha_fin: 2020-05-08
+  informacion: MyText
+  genre_artist: two
+  location: two
+  state: two

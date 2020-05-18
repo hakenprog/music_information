@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  fecha_lanz: 2020-05-08
+  descripcion: MyText
+  num_canciones: 1
+  discografica: MyString
+  album_type: one
+
+two:
+  nombre: MyString
+  fecha_lanz: 2020-05-08
+  descripcion: MyText
+  num_canciones: 1
+  discografica: MyString
+  album_type: two

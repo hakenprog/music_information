@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Administración de música</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+ <div class="container-fluid" id="header">
+  <h1>Música</h1>
+  <p>
+    <% if current_user %>
+    Logeado como <%=current_user.email%>
+    <% end %>
+
+  </p>
+
+    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-link">
+        <%= link_to 'Inicio', artists_path%> 
+
+      </li>
+      <li class="nav-item nav-link">
+        <% if current_user %>
+        <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete%>
+        
+        <% end %>
+        <li>
+
+        </nav>
+      </div>
+      <div class="container">
+        <section class="main">
+          <%= yield %>
+        </section>
+      </div>
+    </body>
+    </html>

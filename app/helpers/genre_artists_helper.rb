@@ -1,0 +1,2 @@
+module GenreArtistsHelper
+end

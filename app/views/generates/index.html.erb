@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Generates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Song</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Duracion sec</th>
+      <th>Album</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @generates.each do |generate| %>
+      <tr>
+        <td><%= generate.song %></td>
+        <td><%= generate.nombre %></td>
+        <td><%= generate.descripcion %></td>
+        <td><%= generate.duracion_sec %></td>
+        <td><%= generate.album_id %></td>
+        <td><%= link_to 'Show', generate %></td>
+        <td><%= link_to 'Edit', edit_generate_path(generate) %></td>
+        <td><%= link_to 'Destroy', generate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Generate', new_generate_path %>
