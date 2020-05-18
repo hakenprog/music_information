@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.7
 
-Things you may want to cover:
+* Database creation: sqllite3 databse included with the project
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
+* Dependencies: bootstrap, jquery, popper.js, devise gem
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
 
-* ...
+
