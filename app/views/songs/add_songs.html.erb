@@ -1,0 +1,6 @@
+<h1>Añadir Canción al álbum <%=@album.nombre%></h1>
+
+
+<%= render 'formAdd_songs', song: @song %>
+
+<%= link_to 'Back', songs_path, :class => "btn btn-primary"  %>

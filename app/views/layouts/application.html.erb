@@ -21,13 +21,29 @@
 
   </p>
 
-    
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item nav-link">
-        <%= link_to 'Inicio', artists_path%> 
+        <%= link_to 'Artistas', artists_path%> 
 
       </li>
+      <li class="nav-item nav-link">
+        <%= link_to 'Géneros', genres_path %>
+      </li>
+
+      <li class="nav-item nav-link">
+        <%= link_to 'Estados', states_path %>
+      </li>
+
+      <li class="nav-item nav-link">
+        <%= link_to 'Tipos de álbumes', album_types_path %>
+      </li>
+
+      <li class="nav-item nav-link">
+        <%= link_to 'Álbumes', albums_path %>
+      </li>
+
       <li class="nav-item nav-link">
         <% if current_user %>
         <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete%>

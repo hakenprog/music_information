@@ -22,6 +22,7 @@
         <td><%= album.num_canciones %></td>
         <td><%= album.discografica %></td>
         <td><%= album.album_type_id %></td>
+        <td> <%= link_to 'Nueva canción',  add_songs_path_url(album)%></td>
         <td><%= link_to 'Show', album %></td>
         <td><%= link_to 'Edit', edit_album_path(album) %></td>
         <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,6 +34,5 @@
 <br>
 
 <%= link_to 'New Album', new_album_path, :class => "btn btn-primary" %>
-<%= link_to 'New song',  {controller: "songs", action: "index"}, :class => "btn btn-primary"%>
 <%= link_to 'Atrás', {controller: "artists", action: "index"}, :class => "btn btn-primary"%>
 

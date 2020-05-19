@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post '/genre_artists/add_genres', to: 'genre_artists#create'
   get '/artist_albums/:artist_id/add_albums', to: 'artist_albums#add_albums'
   post '/artist_albums/add_albums', to: 'artist_albums#create'
+  get '/songs/:album_id/add_genres', to: 'songs#add_songs', as: 'add_songs_path'  
 end

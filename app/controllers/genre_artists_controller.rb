@@ -1,6 +1,7 @@
 class GenreArtistsController < ApplicationController
   before_action :set_genre_artist, only: [:show, :edit, :update, :destroy]
   before_action :set_artist, only: [:add_genres]
+  before_action :authenticate_user!
   
 
 

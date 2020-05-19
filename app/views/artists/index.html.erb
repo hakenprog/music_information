@@ -9,7 +9,8 @@
       <th>Descripcion</th>
       <th>Informacion</th>
       <th>Estado</th>
-      <th colspan="3"></th>
+      <th>Fecha de Inicio</th>
+      <th>Fecha de fin</th>
     </tr>
   </thead>
 
@@ -19,7 +20,9 @@
         <td><%= artist.nombre %></td>
         <td><%= artist.descripcion %></td>
         <td><%= artist.informacion %></td>
-         <td><%= artist.state.nombre %></td>
+        <td><%= artist.state.nombre %></td>
+        <td><%= artist.fecha_ini %></td>
+        <td><%= artist.fecha_fin %></td>
         <td><%= link_to 'Ver', artist %></td>
         <td><%= link_to 'Editar', edit_artist_path(artist) %></td>
         <td><%= link_to 'Eliminar', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,12 +35,9 @@
 
 <br>
 
-<%= link_to 'Añadir Artist', new_artist_path, :class => "btn btn-primary" %>
-<%= link_to 'Añadir Album', {controller: "albums", action: "index"}, :class => "btn btn-primary" %>
-<%= link_to 'Añadir Genero', {controller: "genres", action: "index" }, :class => "btn btn-primary" %>
-<%= link_to 'Añadir Estado', {controller: "states", action: "index" }, :class => "btn btn-primary" %>
-<%= link_to 'Añadir tipo de album', {controller: "album_types", action: "index"}, :class => "btn btn-primary" %>
-<%= link_to 'Ver Álbumes', {controller: "albums", action: "index"}, :class => "btn btn-primary" %>
+<%= link_to 'Añadir Artista', new_artist_path, :class => "btn btn-primary" %>
+<%= link_to 'Crear Album', {controller: "albums", action: "index"}, :class => "btn btn-primary" %>
+
 
 
 
