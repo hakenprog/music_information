@@ -2,7 +2,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   before_action :set_album, only: [:add_songs]
   before_action :authenticate_user!
-
+  require 'open-uri'
 
   # GET /songs
   # GET /songs.json
@@ -13,6 +13,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.json
   def show
+    
   end
 
   def add_songs
@@ -78,6 +79,7 @@ class SongsController < ApplicationController
       @album = Album.find(params[:album_id])
     end
 
+    
     # Only allow a list of trusted parameters through.
     def song_params
       params.require(:song).permit(:nombre, :duracion_sec, :album_id)

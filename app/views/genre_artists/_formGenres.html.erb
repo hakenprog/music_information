@@ -29,14 +29,15 @@
 
   </tbody>
 </table>
+<br>
 <h2>Añadir género al artista</h2>
-<div class="fields">
-	<%=form.label "Género"%>
-	<%= form.collection_select(:genre_id, Genre.all, :id, :nombre) %>
+<div class="form-group row ">
+	<%=form.label "Género", :class => "col-sm-2"%>
+	<%= form.collection_select(:genre_id, Genre.all, :id, :nombre, {}, {:class =>"col-sm-5 btn btn-secondary dropdown-toggle"}) %>
 </div>
  	<%= form.hidden_field :artist_id, :value => params[:artist_id]%>
-<div class="actions">
-    <%= form.submit 'Añadir género' %>
+<div class="form-group row">
+    <%= form.submit 'Añadir género', class: "btn btn-primary" %>
 </div>
 <%end%>
 

@@ -1,0 +1,18 @@
+<div class="col-sm-3 ">
+	<div class="card" id="band_card">
+		<div class="mx-auto"> 
+			<img class="card-img-top" src="..." alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title"><%= song.nombre%></h5>
+				<p class="card-text"><%= song.album.nombre%></p>
+				<%= form_tag (core_path_url :method => "show", :song_id => song.id)do %>
+					<%= label_tag(:q, "Palabra a buscar") %>
+					<%= text_field_tag(:q) %>
+				 	<%= submit_tag :ir %>
+				<% end %>
+
+
+			</div>
+		</div>
+	</div>
+</div>

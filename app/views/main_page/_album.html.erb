@@ -1,0 +1,12 @@
+<div class="col-sm-3 ">
+	<div class="card" id="band_card">
+		<div class="mx-auto"> 
+			<img class="card-img-top" src="..." alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title"><%= album.nombre%></h5>
+				<p class="card-text"><%= album.descripcion%></p>
+				<%= link_to 'Ver más', album_path(album), :class => "btn btn-primary"%> 
+			</div>
+		</div>
+	</div>
+</div>

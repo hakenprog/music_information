@@ -8,55 +8,44 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag "scaffold" %>
+
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
  <div class="container-fluid" id="header">
-  <h1>Música</h1>
-  <p>
-    <% if current_user %>
-    Logeado como <%=current_user.email%>
-    <% end %>
-
-  </p>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-link">
-        <%= link_to 'Artistas', artists_path%> 
-
-      </li>
-      <li class="nav-item nav-link">
-        <%= link_to 'Géneros', genres_path %>
-      </li>
-
-      <li class="nav-item nav-link">
-        <%= link_to 'Estados', states_path %>
-      </li>
-
-      <li class="nav-item nav-link">
-        <%= link_to 'Tipos de álbumes', album_types_path %>
-      </li>
-
-      <li class="nav-item nav-link">
-        <%= link_to 'Álbumes', albums_path %>
-      </li>
-
-      <li class="nav-item nav-link">
+   
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <%= link_to 'Música',  main_page_path_url, :class => "navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to 'Artistas', artists_path, :class => "nav-item nav-link"%>
+        <%= link_to 'Géneros', genres_path, :class => "nav-item nav-link" %> 
+        <%= link_to 'Estados', states_path, :class => "nav-item nav-link" %>
+        <%= link_to 'Tipos de álbumes', album_types_path, :class => "nav-item nav-link" %>
+        <%= link_to 'Álbumes', albums_path, :class => "nav-item nav-link" %>
         <% if current_user %>
-        <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete%>
-        
+        <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, :class => "nav-item nav-link"%>      
         <% end %>
-        <li>
+        <% if current_user %>
+        <span class="nav-item nav-link" id="logeado">Logeado como <%=current_user.email%></span>
+        <% end %>
 
-        </nav>
+
       </div>
-      <div class="container">
-        <section class="main">
-          <%= yield %>
-        </section>
-      </div>
-    </body>
-    </html>
+    </div>
+  </nav>
+
+
+</div>
+<div class="container">
+  <section class="main">
+    <%= yield %>
+  </section>
+</div>
+</body>
+</html>

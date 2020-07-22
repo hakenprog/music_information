@@ -1,0 +1,2 @@
+
+<%=(URI.open('https://es.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch='+ '"' + @song.album.fecha_lanz.to_s+ '"').read).html_safe%>

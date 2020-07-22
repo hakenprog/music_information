@@ -1,0 +1,39 @@
+<div class="container">
+	<h1><%= @song.nombre %></h1>
+	<div class="row">
+		<img class="col-sm-12" src="" alt=<%= @song.nombre%>>
+	</div>
+	<span> <%= @song.duracion_sec %></span>
+	<div class="col-sm-12 ">
+		<div class="card" id="band_card">
+			<div class="row"> 
+				<div class="col-sm-5">
+					<img src="..." alt="Card image cap">
+					<p class="card-title"><%= @song.album.nombre%></p>
+				</div>
+				<p class="card-text col-sm-7">
+
+					<%= render 'consult_wiki', song: @song%>
+
+
+					<%= @song.album.descripcion%></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="col-sm-12">
+			<p class="title">What happened that day?</p>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+<%= render 'wh_happ_day', song: @html %>
+
+
+<%= link_to 'Back', url_for(:back) %>
+

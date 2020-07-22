@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_222424) do
+ActiveRecord::Schema.define(version: 2020_05_22_052622) do
 
   create_table "album_types", force: :cascade do |t|
     t.string "nombre"
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 2020_05_08_222424) do
     t.index ["album_type_id"], name: "index_albums_on_album_type_id"
   end
 
-  create_table "artist_albums", force: :cascade do |t|
-    t.integer "artist_id", null: false
-    t.integer "album_id", null: false
+  create_table "albums_artists", force: :cascade do |t|
+    t.integer "artist_id_id", null: false
+    t.integer "album_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["album_id"], name: "index_artist_albums_on_album_id"
-    t.index ["artist_id"], name: "index_artist_albums_on_artist_id"
+    t.index ["album_id_id"], name: "index_albums_artists_on_album_id_id"
+    t.index ["artist_id_id"], name: "index_albums_artists_on_artist_id_id"
   end
 
   create_table "artists", force: :cascade do |t|
@@ -158,8 +158,8 @@ ActiveRecord::Schema.define(version: 2020_05_08_222424) do
   end
 
   add_foreign_key "albums", "album_types"
-  add_foreign_key "artist_albums", "albums"
-  add_foreign_key "artist_albums", "artists"
+  add_foreign_key "albums_artists", "album_ids"
+  add_foreign_key "albums_artists", "artist_ids"
   add_foreign_key "artists", "locations"
   add_foreign_key "artists", "states"
   add_foreign_key "cities", "provinces"

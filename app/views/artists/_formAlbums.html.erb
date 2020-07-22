@@ -1,0 +1,83 @@
+<%= form_with(model: artist, local: true) do |form| %>
+  <% if artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist.errors.count, "error") %> prohibited this artist_album from being saved:</h2>
+
+      <ul>
+        <% artist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-group row">
+  <%= form.label :nombre, :class => "col-sm-2 col-form-label" %>
+  <%= form.text_field :nombre, :class =>"col-sm-5" %>
+
+</div>
+
+<div class="form-group row">
+  <%= form.label :descripcion, :class => "col-sm-2 col-form-label" %>
+  <%= form.text_field :descripcion, :class =>"col-sm-5" %>
+
+</div>
+
+<div class="form-group row">
+  <%= form.label :informacion, :class => "col-sm-2 col-form-label" %>
+  <%= form.text_field :informacion, :class => "col-sm-5" %>
+ 
+</div>
+
+<div class="form-group row">
+  <%= form.label :Estado, :class => "col-sm-2 col-form-label" %>
+  <%= form.collection_select(:state_id, State.all, :id, :nombre, {}, {:class => "col-sm-5 btn btn-secondary dropdown-toggle"})  %>
+</div>
+
+<div class="form-group row">
+
+  <%= form.label "Fecha de inicio de actvividad", :class => "col-sm-2 col-form-label"%>
+  <div class="col-sm-5">
+  <%= form.date_field :fecha_ini, :class=> "date_picker" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= form.label "Fecha de Fin (Dejar en blanco si esta en activo)", :class => "col-sm-2 col-form-label"%>
+  <div class="col-sm-5">
+
+    <%= form.date_field :fecha_fin, :class=> "date_picker"  %>
+  </div>
+</div>
+
+
+
+<%= form.hidden_field :location_id, :value => "2"%>
+
+<table id ="genres" class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Artista</th>
+      <th>Album</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <%= render partial: "album", collection: @artist.albums%>
+
+  </tbody>
+</table>
+<br>
+<h2>Añadir álbum al artista</h2>
+<div class="fields">
+	<%=form.label "Género"%>
+	<%= form.collection_select(:album_id, Album.all, :id, :nombre) %>
+</div>
+ 	<%= form.hidden_field :artist_id, :value => params[:artist_id]%>
+<div class="actions" id="submit">
+    <%= form.submit %>
+</div>
+<%end%>
+
